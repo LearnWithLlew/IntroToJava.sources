@@ -1,4 +1,4 @@
-<project name="Teaching Kids Programming" basedir="../">
+<project name="Learn With Llew" basedir="../">
 	<property name="Program" value="Spiral" />
 	<!--change the value to the name of the program you want to run -->
 	<target name="Create Jar File">
@@ -8,7 +8,7 @@
 			</zipgroupfileset>
 			<manifest>
 				<attribute name="Main-Class"
-					value="org.teachingkidsprogramming.recipes.${Program}" />
+					value="org.learnwithllew.courseware.${Program}" />
 			</manifest>
 		</jar>
 	</target>
