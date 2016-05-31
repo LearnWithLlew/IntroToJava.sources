@@ -4,13 +4,14 @@ import junit.framework.TestCase;
 
 import org.approvaltests.reporters.DelayedClipboardReporter;
 import org.approvaltests.reporters.DiffReporter;
+import org.approvaltests.reporters.FileLauncherReporter;
 import org.approvaltests.reporters.UseReporter;
 import org.learnwithllew.teachingextensions.logo.Turtle;
 import org.learnwithllew.teachingextensions.logo.utils.TortoiseUtils;
 import org.learnwithllew.courseware.recipes.quizzes.graders.TreeQuizAdapter;
 import org.learnwithllew.courseware.recipes.quizzes.graders.TreeQuizGrader;
 
-@UseReporter({DelayedClipboardReporter.class, DiffReporter.class})
+@UseReporter({DelayedClipboardReporter.class, FileLauncherReporter.class})
 public class TreeQuizTest extends TestCase
 {
   public static class TreeCorrectQuiz extends TreeQuizAdapter

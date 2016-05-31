@@ -3,6 +3,7 @@ package org.learnwithllew.courseware.recipes.quizzes.tests;
 import junit.framework.TestCase;
 
 import org.approvaltests.reporters.DelayedClipboardReporter;
+import org.approvaltests.reporters.DiffReporter;
 import org.approvaltests.reporters.FileLauncherReporter;
 import org.approvaltests.reporters.UseReporter;
 import org.learnwithllew.teachingextensions.logo.Tortoise;
@@ -11,7 +12,7 @@ import org.learnwithllew.teachingextensions.logo.utils.TortoiseUtils;
 import org.learnwithllew.courseware.recipes.quizzes.graders.SpiderQuiz;
 import org.learnwithllew.courseware.recipes.quizzes.graders.SpiderWebQuizGrader;
 
-@UseReporter({DelayedClipboardReporter.class, FileLauncherReporter.class})
+@UseReporter({DelayedClipboardReporter.class, DiffReporter.class})
 public class SpiderWebQuizTest extends TestCase
 {
   public static class SpiderWebCorrectQuiz extends SpiderQuiz

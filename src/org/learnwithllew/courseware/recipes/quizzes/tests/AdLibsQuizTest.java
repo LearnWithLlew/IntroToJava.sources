@@ -3,6 +3,7 @@ package org.learnwithllew.courseware.recipes.quizzes.tests;
 import junit.framework.TestCase;
 
 import org.approvaltests.reporters.DelayedClipboardReporter;
+import org.approvaltests.reporters.DiffReporter;
 import org.approvaltests.reporters.FileLauncherReporter;
 import org.approvaltests.reporters.UseReporter;
 import org.learnwithllew.courseware.recipes.quizzes.graders.AdLibsQuizAdapter;
@@ -12,7 +13,7 @@ import org.learnwithllew.teachingextensions.logo.Turtle;
 import org.learnwithllew.teachingextensions.logo.utils.TortoiseUtils;
 import org.learnwithllew.teachingextensions.simpleparser.Parser;
 
-@UseReporter({DelayedClipboardReporter.class, FileLauncherReporter.class})
+@UseReporter({DelayedClipboardReporter.class, DiffReporter.class})
 public class AdLibsQuizTest extends TestCase
 {
   public static class AdLibsCorrectQuiz extends AdLibsQuizAdapter
@@ -63,6 +64,5 @@ public class AdLibsQuizTest extends TestCase
   {
     TreeQuizGrader.TURTLE_SPEED = Turtle.TEST_SPEED;
     new AdLibsQuizGrader().grade(new AdLibsIncorrectQuiz());
-    TortoiseUtils.verifyForOs();
-  }
+ }
 }
