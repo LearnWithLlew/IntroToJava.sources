@@ -66,6 +66,7 @@
 				<include name="org/learnwithllew/**/*.docx" />
 				<include name="org/learnwithllew/**/*.pdf" />
 				<include name="org/learnwithllew/**/*.pptx" />
+				<include name="**/*.jar" />
 				<exclude name="**/tests/**" />
 				<exclude name="**/completed/**" />
 			</fileset>
