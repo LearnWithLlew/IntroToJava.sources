@@ -65,6 +65,7 @@
 				<include name="org/learnwithllew/**/*.java" />
 				<include name="org/learnwithllew/**/*.docx" />
 				<include name="org/learnwithllew/**/*.pdf" />
+				<include name="org/learnwithllew/**/*.pptx" />
 				<exclude name="**/tests/**" />
 				<exclude name="**/completed/**" />
 			</fileset>
