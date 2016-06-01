@@ -1,5 +1,5 @@
 <project name="Learn With Llew" basedir="."
-	default="Publish    TLearnWithLlew">
+	default="Publish    LearnWithLlew">
 	<target name="compile" depends="cleanUp">
 		<mkdir dir="${build}" />
 		<delete dir="${build}/com/spun" />
@@ -47,41 +47,41 @@
 	</target>
 
 
-	<target name="Publish    TLearnWithLlew">
+	<target name="Publish    LearnWithLlew">
 		<property file="properties/learn_with_llew.properties" />
-		<antcall target="createTLearnWithLlew" />
+		<antcall target="createLearnWithLlew" />
 	</target>
 
-	<target name="cleanTLearnWithLlew">
-		<delete dir="${tkp_project}/bin" failonerror="false" />
-		<delete dir="${tkp_project}/src" failonerror="false" />
-		<delete dir="${tkp_project}/build" failonerror="false" />
+	<target name="cleanLearnWithLlew">
+		<delete dir="${project}/bin" failonerror="false" />
+		<delete dir="${project}/src" failonerror="false" />
+		<delete dir="${project}/build" failonerror="false" />
 	</target>
 
-	<target name="createTLearnWithLlew" depends="cleanTLearnWithLlew, buildJarFile">
-		<copy file="${build}/TLearnWithLlew.jar" todir="${tkp_project}/src/jars" />
-		<copy file="${documentation}/build.xml" todir="${tkp_project}/build" />
-		<copy todir="${tkp_project}/src" verbose="true">
+	<target name="createLearnWithLlew" depends="cleanLearnWithLlew, buildJarFile">
+		<copy file="${build}/LearnWithLlew.jar" todir="${project}/src/jars" />
+		<copy file="${documentation}/build.xml" todir="${project}/build" />
+		<copy todir="${project}/src" verbose="true">
 			<fileset dir="${src}">
-				<include name="org/tLearnWithLlew/**/*.java" />
-				<include name="org/tLearnWithLlew/**/*.docx" />
-				<include name="org/tLearnWithLlew/**/*.pdf" />
+				<include name="org/learnwithllew/**/*.java" />
+				<include name="org/learnwithllew/**/*.docx" />
+				<include name="org/learnwithllew/**/*.pdf" />
 				<exclude name="**/tests/**" />
 				<exclude name="**/completed/**" />
 			</fileset>
 		</copy>
-		<replace dir="${tkp_project}/src" token="@Ignore" value="" />
-		<zip destfile="${build}/tkp_workspace.v${version}.zip" basedir="${tkp_workspace}"
+		<replace dir="${project}/src" token="@Ignore" value="" />
+		<zip destfile="${build}/workspace.v${version}.zip" basedir="${workspace}"
 			includes="**">
 		</zip>
 	</target>
-	<target name="Publish    TKP Launcher">
-		<property file="properties/tkplauncher.properties" />
-		<antcall target="buildExecutableTkpJarFile" />
+	<target name="Publish    Learn With Llew Launcher">
+		<property file="properties/learn_with_llew_launcher.properties" />
+		<antcall target="buildExecutableJarFile" />
 
 	</target>
-	<target name="buildExecutableTkpJarFile" depends="compile">
-		<jar destfile="${jar}/TKP_Launcher.jar" update="false">
+	<target name="buildExecutableJarFile" depends="compile">
+		<jar destfile="${jar}/Learn_With_Llew_Launcher.jar" update="false">
 			<fileset dir="${build}" includes="**" />
 			<manifest>
 				<attribute name="Main-Class"
@@ -89,18 +89,18 @@
 			</manifest>
 		</jar>
 	</target>
-	<target name="Publish    TKP ThumbDriveInstaller">
-		<property file="properties/tkplauncher.properties" />
+	<target name="Publish    ThumbDriveInstaller">
+		<property file="properties/learn_with_llew_launcher.properties" />
 		<antcall target="buildThumbDriveInstaller" />
 
 	</target>
 
 	<target name="buildThumbDriveInstaller" depends="compile">
-		<jar destfile="${jar}/TKP_Installer.jar" update="false">
+		<jar destfile="${jar}/Learn_With_Llew_Installer.jar" update="false">
 			<fileset dir="${build}" includes="**" />
 			<manifest>
 				<attribute name="Main-Class"
-					value="org.teachingextensions.setup.ThumbDriveInstaller" />
+					value="org.learnwithllew.teachingextensions.setup.ThumbDriveInstaller" />
 			</manifest>
 		</jar>
 	</target>
