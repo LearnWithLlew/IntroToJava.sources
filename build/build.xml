@@ -5,8 +5,7 @@
 		<delete dir="${build}/com/spun" />
 		<echo>${targetJavaClass}</echo>
 		<javac srcdir="${src}:${additonal_java_sources}" destdir="${build}"
-			debug="true" includes="${targetJavaClass}" target="1.6" source="1.6"
-			listfiles="true">
+			debug="true" includes="${targetJavaClass}" target="1.6" source="1.6" listfiles="true">
 			<exclude name="**/tests/**" if="excludeTests" />
 
 			<classpath>
@@ -85,7 +84,7 @@
 			<fileset dir="${build}" includes="**" />
 			<manifest>
 				<attribute name="Main-Class"
-					value="org.teachingextensions.setup.SetupValidator" />
+					value="org.learnwithllew.teachingextensions.setup.SetupValidator" />
 			</manifest>
 		</jar>
 	</target>
