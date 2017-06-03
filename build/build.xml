@@ -5,7 +5,7 @@
 		<delete dir="${build}/com/spun" />
 		<echo>${targetJavaClass}</echo>
 		<javac srcdir="${src}:${additonal_java_sources}" destdir="${build}"
-			debug="true" includes="${targetJavaClass}" target="1.6" source="1.6" listfiles="true">
+			debug="true" includes="${targetJavaClass}" target="1.8" source="1.8" listfiles="true">
 			<exclude name="**/tests/**" if="excludeTests" />
 
 			<classpath>

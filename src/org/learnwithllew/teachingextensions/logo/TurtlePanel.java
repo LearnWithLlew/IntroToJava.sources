@@ -8,6 +8,7 @@ import java.awt.Image;
 import java.awt.RenderingHints;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.Line2D;
+import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 
@@ -16,29 +17,36 @@ import org.learnwithllew.teachingextensions.windows.ProgramWindow;
 
 public class TurtlePanel extends ProgramWindow
 {
-  private Turtle turtle;
-  private Image  image;
+  private ArrayList<Turtle> turtles = new ArrayList<>();
+  private Image             image;
   public TurtlePanel()
   {
   }
-  public void setTurtle(Turtle turtle)
+  public void addTurtle(Turtle turtle)
   {
-    this.turtle = turtle;
+    this.turtles.add(turtle);
   }
   @Override
   public void paint(Graphics g)
   {
     super.paint(g);
-    paintLines((Graphics2D) g);
-    paintTurtle((Graphics2D) g);
+    for (Turtle turtle : turtles)
+    {
+      paintLines((Graphics2D) g, turtle);
+      paintTurtle((Graphics2D) g, turtle);
+    }
   }
-  private void paintLines(Graphics2D g)
+  private void paintLines(Graphics2D g, Turtle turtle)
   {
-    if (turtle == null) { return; }
+    if (turtles.isEmpty()) { return; }
     g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
     g.setRenderingHint(RenderingHints.KEY_COLOR_RENDERING, RenderingHints.VALUE_COLOR_RENDER_QUALITY);
     g.setRenderingHint(RenderingHints.KEY_STROKE_CONTROL, RenderingHints.VALUE_STROKE_PURE);
     g.setRenderingHint(RenderingHints.KEY_DITHERING, RenderingHints.VALUE_DITHER_ENABLE);
+    drawTurtleLines(g, turtle);
+  }
+  private void drawTurtleLines(Graphics2D g, Turtle turtle)
+  {
     for (LineSegment l : turtle.getTrail())
     {
       if (l != null)
@@ -49,7 +57,7 @@ public class TurtlePanel extends ProgramWindow
       }
     }
   }
-  private void paintTurtle(Graphics2D g)
+  private void paintTurtle(Graphics2D g, Turtle turtle)
   {
     if (turtle == null || turtle.isHidden()) { return; }
     Image image = getImage();

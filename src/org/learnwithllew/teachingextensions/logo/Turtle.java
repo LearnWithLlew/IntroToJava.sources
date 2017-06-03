@@ -23,7 +23,7 @@ public class Turtle
    * Current types are: Turtle, Spider
    */
   public enum Animals {
-    ExplodedTurtle, Turtle, Spider
+                       ExplodedTurtle, Turtle, Spider
   }
   private class Turner implements Saver<Double>
   {
@@ -76,6 +76,14 @@ public class Turtle
   private int                 width           = 2;
   private boolean             penDown         = true;
   private boolean             hidden;
+  public Turtle()
+  {
+  }
+  public Turtle(TurtlePanel panel)
+  {
+    this.panel = panel;
+    panel.addTurtle(this);
+  }
   public BufferedImage getImage()
   {
     BufferedImage image = ComponentApprovalWriter.drawComponent(getPanel());
@@ -94,15 +102,20 @@ public class Turtle
   {
     if (panel == null)
     {
-      String title = "Turtle";
-      panel = new TurtlePanel();
-      if (speed != TEST_SPEED)
-      {
-        JFrame frame = new JFrame(title);
-        frame.getContentPane().add(panel);
-        ProgramWindow.createStandardFrame(frame);
-      }
-      panel.setTurtle(this);
+      panel = createTurtlePanel(speed != TEST_SPEED);
+      panel.addTurtle(this);
+    }
+    return panel;
+  }
+  public static TurtlePanel createTurtlePanel(boolean display)
+  {
+    String title = "Turtle";
+    TurtlePanel panel = new TurtlePanel();
+    if (display)
+    {
+      JFrame frame = new JFrame(title);
+      frame.getContentPane().add(panel);
+      ProgramWindow.createStandardFrame(frame);
     }
     return panel;
   }
@@ -185,11 +198,9 @@ public class Turtle
   {
     if (speed != TEST_SPEED)
     {
-      if (speed < 1 || 10 < speed) { throw new RuntimeException(
-          String
-              .format(
-                  "I call shenanigans!!!\nThe speed '%s' is not between the acceptable range of [1-10]\nPerhaps you should read the documentation",
-                  speed)); }
+      if (speed < 1 || 10 < speed) { throw new RuntimeException(String.format(
+          "I call shenanigans!!!\nThe speed '%s' is not between the acceptable range of [1-10]\nPerhaps you should read the documentation",
+          speed)); }
     }
     this.speed = speed;
   }

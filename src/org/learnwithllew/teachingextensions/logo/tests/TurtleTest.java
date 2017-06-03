@@ -2,8 +2,6 @@ package org.learnwithllew.teachingextensions.logo.tests;
 
 import java.awt.Color;
 
-import junit.framework.TestCase;
-
 import org.approvaltests.Approvals;
 import org.approvaltests.reporters.DelayedClipboardReporter;
 import org.approvaltests.reporters.DiffReporter;
@@ -12,6 +10,8 @@ import org.lambda.functions.Function1;
 import org.learnwithllew.teachingextensions.logo.Colors;
 import org.learnwithllew.teachingextensions.logo.Turtle;
 import org.learnwithllew.teachingextensions.logo.Wheel;
+
+import junit.framework.TestCase;
 
 @UseReporter({DiffReporter.class, DelayedClipboardReporter.class})
 public class TurtleTest extends TestCase
@@ -60,7 +60,7 @@ public class TurtleTest extends TestCase
     {
       double deltaY = Turtle.getDeltaY(5, i * 45.0);
       double deltaX = Turtle.getDeltaX(5, i * 45.0);
-      out += String.format("%s=>[%s, %s]\r\n", i * 45, deltaX, deltaY);
+      out += String.format("%s=>[%s, %s]\n", i * 45, deltaX, deltaY);
     }
     Approvals.verify(out);
   }
