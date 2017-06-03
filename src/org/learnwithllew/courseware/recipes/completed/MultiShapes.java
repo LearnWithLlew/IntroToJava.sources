@@ -22,16 +22,17 @@ public class MultiShapes
   private static void drawShape(int sides, TurtlePanel turtlePanel)
   {
     Turtle t = new Turtle(turtlePanel);
-    t.setSpeed(9);
+    t.turn(-90);
+    t.setSpeed(3);
     t.setPenWidth(1);
     t.setPenColor(Colors.getRandomColor());
-    t.setX(300 - (20 * sides));
-    t.setY(400);
+    t.setY(200 + (14 * sides));
+    t.setX(400);
     while (true)
     {
       for (int i = 1; i <= sides; i++)
       {
-        t.move(100);
+        t.move(77);
         t.turn(360.0 / sides);
       }
       t.penUp();

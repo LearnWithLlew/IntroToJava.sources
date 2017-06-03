@@ -47,6 +47,7 @@ public class TurtlePanel extends ProgramWindow
   }
   private void drawTurtleLines(Graphics2D g, Turtle turtle)
   {
+    if (turtle == null) { return; }
     for (LineSegment l : turtle.getTrail())
     {
       if (l != null)
