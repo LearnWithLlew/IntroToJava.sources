@@ -30,6 +30,7 @@ public class TurtlePanel extends ProgramWindow
   public void paint(Graphics g)
   {
     super.paint(g);
+    Turtle[] turtles = this.turtles.toArray(new Turtle[0]); // for thread safety
     for (Turtle turtle : turtles)
     {
       paintLines((Graphics2D) g, turtle);
