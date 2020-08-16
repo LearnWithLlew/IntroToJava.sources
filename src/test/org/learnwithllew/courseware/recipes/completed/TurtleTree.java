@@ -3,11 +3,17 @@ package org.learnwithllew.courseware.recipes.completed;
 import java.awt.Color;
 import java.util.HashMap;
 
+import org.junit.Test;
 import org.learnwithllew.teachingextensions.logo.Colors;
 import org.learnwithllew.teachingextensions.logo.Tortoise;
+import org.learnwithllew.teachingextensions.logo.utils.TortoiseUtils;
 
 public class TurtleTree
 {
+  @Test
+  public void testCompleted() {
+    TortoiseUtils.verifyMain(this.getClass());
+  }
   public static void main(String[] args)
   {
     //    Make the tortoise go as fast as possible --#11

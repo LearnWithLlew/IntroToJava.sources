@@ -1,10 +1,16 @@
 package org.learnwithllew.courseware.recipes.completed;
 
+import org.junit.Test;
 import org.learnwithllew.teachingextensions.logo.Colors;
 import org.learnwithllew.teachingextensions.logo.Tortoise;
+import org.learnwithllew.teachingextensions.logo.utils.TortoiseUtils;
 
 public class TriangleShell
 {
+  @Test
+  public void testCompleted() {
+    TortoiseUtils.verifyMain(this.getClass());
+  }
   private static int length;
   public static void main(String[] args)
   {

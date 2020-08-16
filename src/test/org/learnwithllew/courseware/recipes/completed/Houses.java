@@ -2,10 +2,16 @@ package org.learnwithllew.courseware.recipes.completed;
 
 import java.awt.Color;
 
+import org.junit.Test;
 import org.learnwithllew.teachingextensions.logo.Tortoise;
+import org.learnwithllew.teachingextensions.logo.utils.TortoiseUtils;
 
 public class Houses
 {
+  @Test
+  public void testCompleted() {
+    TortoiseUtils.verifyMain(this.getClass());
+  }
   public static void main(String[] args)
   {
     //   Make the tortoise move as fast as possible --#11

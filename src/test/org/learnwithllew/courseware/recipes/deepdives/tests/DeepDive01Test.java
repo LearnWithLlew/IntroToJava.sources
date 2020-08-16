@@ -3,11 +3,15 @@ package org.learnwithllew.courseware.recipes.deepdives.tests;
 import junit.framework.TestCase;
 
 import org.learnwithllew.courseware.section01forloops.DeepDive01ForLoops;
+import org.learnwithllew.teachingextensions.logo.Tortoise;
+import org.learnwithllew.teachingextensions.logo.Turtle;
+import org.learnwithllew.teachingextensions.logo.utils.TortoiseUtils;
 
 public class DeepDive01Test extends TestCase
 {
   public void testQuestions() throws Exception
   {
+    TortoiseUtils.setTurtle(new Turtle());
     assertQuestion("numbersDoNotNeedQuotes", 42);
     assertQuestion("defaultWidthForTheTortoise", 2);
     assertQuestion("stringsNeedQuotes", "Green");

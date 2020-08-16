@@ -2,16 +2,19 @@ package org.learnwithllew.courseware.recipes.completed;
 
 import java.awt.Color;
 
+import org.junit.Test;
 import org.learnwithllew.teachingextensions.logo.ColorWheel;
 import org.learnwithllew.teachingextensions.logo.Colors;
 import org.learnwithllew.teachingextensions.logo.Tortoise;
 import org.learnwithllew.teachingextensions.logo.shapes.Circle;
 import org.learnwithllew.teachingextensions.logo.shapes.Text;
+import org.learnwithllew.teachingextensions.logo.utils.TortoiseUtils;
 import org.learnwithllew.teachingextensions.windows.MouseLeftClickListener;
 import org.learnwithllew.teachingextensions.windows.MouseRightClickListener;
 
 public class ConnectTheDots implements MouseRightClickListener, MouseLeftClickListener
 {
+
   public static void main(String[] args)
   {
     //Create a Connect the Dots window.

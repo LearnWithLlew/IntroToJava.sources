@@ -1,11 +1,17 @@
 package org.learnwithllew.courseware.recipes.completed;
 
+import org.junit.Test;
 import org.learnwithllew.teachingextensions.logo.ColorWheel;
 import org.learnwithllew.teachingextensions.logo.Colors;
 import org.learnwithllew.teachingextensions.logo.Tortoise;
+import org.learnwithllew.teachingextensions.logo.utils.TortoiseUtils;
 
 public class KnottedRing
 {
+  @Test
+  public void testCompleted() {
+    TortoiseUtils.verifyMain(this.getClass());
+  }
   public static void main(String[] args)
   {
     //    Make the tortoise move as fast as possible --#4
