@@ -2,7 +2,7 @@
 /bin
 .idea
 # Package Files #
-
+/target/
 *.war
 *.ear
 *.recieved.*
