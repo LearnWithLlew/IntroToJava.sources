@@ -14,7 +14,7 @@ public class SpiderWeb
     //        weaveOneLayer (recipe below) --#9
     //        ------------- Recipe for weaveOneLayer --#9
     //        Do the following 6 times --#5
-    //            drawTriangle (recipe below) --#4.2
+    //            drawTriangle (recipe below) --#4
     //            ------------- Recipe for drawTriangle --#4
     //            Do the following 3 times --#3
     //                Move the tortoise the length of a line --#1.1
